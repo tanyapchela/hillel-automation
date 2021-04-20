@@ -1,5 +1,4 @@
-package com.ithillel.driver;
-
+import com.ithillel.driver.WebDriverFactory;
 import com.ithillel.utils.ConfigProvider;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
