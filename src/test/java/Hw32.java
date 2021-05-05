@@ -11,14 +11,10 @@ public class Hw32 {
     }
 
     private static void findElement() {
-        try {
-            WebDriver driver = WebDriverFactory.getDriver();
-            WebDriverWait wait = new WebDriverWait(driver, 5);
-            driver.get(ConfigProvider.BROWSER_URL);
-            driver.navigate().to(ConfigProvider.BROWSER_URL + "/courses/qa-automation-kiev");
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.className("courses-menu")));
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        WebDriver driver = WebDriverFactory.getDriver();
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        driver.get(ConfigProvider.BROWSER_URL);
+        driver.navigate().to(ConfigProvider.BROWSER_URL + "/courses/qa-automation-kiev");
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("courses-menu")));
     }
 }
