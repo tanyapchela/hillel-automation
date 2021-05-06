@@ -5,16 +5,12 @@ import org.openqa.selenium.WebDriver;
 
 public class Hw33PageObject {
     public static void main(String[] args) {
-        try {
-            WebDriver driver = WebDriverFactory.getDriver();
-            driver.get("https://ithillel.ua/courses/introduction-kiev");
-            JavaBasic javaPage = new JavaBasic(driver);
-            System.out.println(javaPage.getCourseTitle());
-            System.out.println(javaPage.getCourseRate());
-            System.out.println(javaPage.getCourseDescription());
-            System.out.println(javaPage.getCourseGoals());
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        WebDriver driver = WebDriverFactory.getDriver();
+        driver.get("https://ithillel.ua/courses/introduction-kiev");
+        JavaBasic javaPage = new JavaBasic(driver);
+        System.out.println(javaPage.getCourseTitle());
+        System.out.println(javaPage.getCourseRate());
+        System.out.println(javaPage.getCourseDescription());
+        System.out.println(javaPage.getCourseGoals());
     }
 }

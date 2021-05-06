@@ -11,13 +11,9 @@ import java.util.List;
 
 public class Hw31TeachersList {
     public static void main(String[] args) {
-        try {
-            WebDriver driver = WebDriverFactory.getDriver();
-            driver.get(ConfigProvider.BROWSER_URL);
-            toProgramming(driver);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        WebDriver driver = WebDriverFactory.getDriver();
+        driver.get(ConfigProvider.BROWSER_URL);
+        toProgramming(driver);
     }
 
     private static void toProgramming(WebDriver driver) {

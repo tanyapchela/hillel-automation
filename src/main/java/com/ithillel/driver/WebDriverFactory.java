@@ -12,9 +12,14 @@ public class WebDriverFactory {
     private static final String BROWSER = System.getProperty("browser");
     private static WebDriver driver;
 
-    public static WebDriver getDriver() throws IllegalAccessException {
+    public static WebDriver getDriver() {
         String browserType = BROWSER != null ? BROWSER : ConfigProvider.BROWSER;
-        WebDriver driver = getDriver(Browser.valueOf(browserType.toUpperCase()));
+        WebDriver driver = null;
+        try {
+            driver = getDriver(Browser.valueOf(browserType.toUpperCase()));
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
         Runtime.getRuntime().addShutdownHook(new Thread(new CloseDriveHook(driver)));
         return driver;
     }
